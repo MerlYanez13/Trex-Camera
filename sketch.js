@@ -11,7 +11,7 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 var score=0;
 
 var gameOver, restart;
-
+var bg;
 localStorage["HighestScore"] = 0;
 
 function preload(){
@@ -28,7 +28,7 @@ function preload(){
   obstacle4 = loadImage("obstacle4.png");
   obstacle5 = loadImage("obstacle5.png");
   obstacle6 = loadImage("obstacle6.png");
-  
+  bg=loadImage("bg.jpg")
   gameOverImg = loadImage("gameOver.png");
   restartImg = loadImage("restart.png");
 }
@@ -71,7 +71,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(bg);
   text("Score: "+ score, 250,50);
   
   if (gameState===PLAY){
